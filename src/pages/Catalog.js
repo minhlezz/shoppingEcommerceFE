@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from '../GlobalStyles'
 import InfiniteList from '../components/InfiniteList'
 import CatalogFilter from '../components/CatalogFilter'
-import heroes from '../assets/fake-api/heroes.data';
+import productData from '../assets/fake-api/product.data';
 
 const extStyles = {
   paddingTop: '150px',
@@ -15,8 +15,8 @@ const Catalog = () => {
 
   return (
     <Container style={extStyles}>
-      <CatalogFilter />
-      <InfiniteList data={heroes} />
+      {/* <CatalogFilter /> */}
+      <InfiniteList data={productData} />
     </Container>
   )
 }

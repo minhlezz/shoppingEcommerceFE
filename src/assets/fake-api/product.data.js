@@ -121,3 +121,5 @@ const products = [
         description: "Flavors of raw honey, sage and barrel oak with a milky, bourbon-like texture."
     }
 ]
+
+export default products;

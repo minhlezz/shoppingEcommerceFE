@@ -1,22 +1,25 @@
 import React from 'react'
 import { Wrapper } from './InfiteList.styles'
-import HeroCard from '../HeroCard'
 import Grid from '../Grid/'
+import ProductCard from '../ProductCard'
 
 const InfiniteList = ({ data }) => {
     return (
         <Wrapper>
-            <Grid col={3} mdCol={2} smCol={1} gap={20}>
-                {data.map((item, index) => (
-                    <HeroCard
-                        key={index}
-                        id={item.id}
-                        heroName={item.heroName}
-                        image={item.image}
-                        race={item.race}
-                        heroPrice={item.heroPrice}
-                    />
-                ))}
+            <Grid col={4} mdCol={2} smCol={1} gap={20}>
+                {
+                    data && data.map((item, index) => (
+                        <ProductCard
+                            key={index}
+                            image={item.image01}
+                            title={item.title}
+                            price={item.price}
+                            description={item.description}
+                            slug={item.slug}
+                        />
+                    ))
+                }
+
             </Grid>
         </Wrapper>
     )
