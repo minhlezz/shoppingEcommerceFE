@@ -122,4 +122,10 @@ const products = [
     }
 ]
 
-export default products;
+const getAllProducts = () => products;
+
+const productData = {
+    getAllProducts
+}
+
+export default productData;

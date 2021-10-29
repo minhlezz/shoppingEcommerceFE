@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-    Wrapper, CardLink, CardImage, CardContent, CardPrice, CardTitle, CardDescription
+    Wrapper, CardLink, CardImage, CardBottom,
+    CardContent, CardTop, CardTitle, CardDescription
 } from './ProductCard..styles'
 
 import PropTypes from 'prop-types'
@@ -14,12 +15,14 @@ const ProductCard = ({ image, price, title, description, slug }) => {
                     <img src={image} alt="" />
                 </CardImage>
                 <CardContent>
-                    <CardPrice>
+                    <CardTop>
                         FROM
                         <span>${price}</span>
-                    </CardPrice>
-                    <CardTitle>{title}</CardTitle>
-                    <CardDescription>{description}</CardDescription>
+                    </CardTop>
+                    <CardBottom>
+                        <CardTitle>{title}</CardTitle>
+                        <CardDescription>{description}</CardDescription>
+                    </CardBottom>
                 </CardContent>
             </CardLink>
         </Wrapper>
