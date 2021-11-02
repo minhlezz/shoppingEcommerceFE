@@ -25,3 +25,7 @@ export const ContentBody = styled.div`
     padding: 0 40px;
 
 `
+
+export const ContentItem= styled.div`
+    margin-right: 20px;
+`
