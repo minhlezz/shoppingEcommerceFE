@@ -1,22 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Wrapper, Title, Content } from './Widget.styles'
+import Checkbox from '../Checkbox'
+import { Wrapper, Title, Content, ContentItem } from './Widget.styles';
 
-const Widget = ({ children }) => {
+const Widget = (props) => {
     return (
         <Wrapper>
-            <Title>
-                <span>Races</span>
-            </Title>
+            <Title>{props.title}</Title>
             <Content>
-                {children}
+                {props.data && props.data.map((item, index) => {
+                    return (
+                        <ContentItem key={index}>
+                            <Checkbox
+                                label={item.display}
+                                onChange={props.onChange} />
+                        </ContentItem>
+                    )
+                })}
             </Content>
         </Wrapper>
     )
-}
-
-Widget.propTypes = {
-
 }
 
 export default Widget

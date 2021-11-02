@@ -31,4 +31,24 @@ export const Container = styled.div`
     margin: 0 auto;
 `
 
+export const Flex = styled.div`
+    display: flex;
+    align-items: flex-start;
+`
+
+
+export const Button = styled.button`
+    display: block;
+    cursor: pointer;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #7fffd4;
+    padding: 10px 50px;
+    background-color: transparent;
+    color: #7fffd4;
+    text-transform: uppercase;
+`
 export default GlobalStyles;
+
+
+
