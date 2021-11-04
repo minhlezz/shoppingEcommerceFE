@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
         --yellow: #ffc904;
         --black: #000;
         --lgrey: #353444;
+        --grey: #ababab;
     }
     
     * {
@@ -48,6 +49,7 @@ export const Button = styled.button`
     color: #7fffd4;
     text-transform: uppercase;
 `
+
 export default GlobalStyles;
 
 

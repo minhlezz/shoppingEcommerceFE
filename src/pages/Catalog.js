@@ -88,6 +88,7 @@ const Catalog = () => {
           <CatalogFilter
             filterProducts={filterProducts}
             filter={filter}
+            handleClearFilter={handleClearFilter}
           />
         )}
         <InfiniteList data={products} />

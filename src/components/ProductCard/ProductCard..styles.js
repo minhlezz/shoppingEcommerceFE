@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
         background-color: var(--lgrey);
         transform: translateY(-5px);
         box-shadow: 0 10px 24px 0 rgb(0 0 0 / 22%);
+        transition: ease-in .3s;
     }
 `
 

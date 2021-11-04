@@ -11,10 +11,6 @@ const size = [
         display: "L",
         size: "l"
     },
-    {
-        display: "XL",
-        size: "XL"
-    },
 ]
 
 export default size;

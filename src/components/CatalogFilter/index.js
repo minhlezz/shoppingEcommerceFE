@@ -8,13 +8,12 @@ import Size from '../../assets/fake-api/product-size.data'
 
 
 const CatalogFilter = (props) => {
-
     return (
         <Wrapper >
             <Content>
                 <ContentTop>
                     <p>Filters</p>
-                    <Button>Clear Filter</Button>
+                    <Button onClick={props.handleClearFilter}>Clear Filter</Button>
                 </ContentTop>
                 <ContentBody>
                     <Widget title={'Category'}>
