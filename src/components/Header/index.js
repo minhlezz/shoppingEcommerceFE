@@ -9,10 +9,10 @@ const Header = () => {
                 <List>
                     <Linked to="/">Coffeelify</Linked>
                     <Linked to="/catalog">Coffee</Linked>
-                    <Linked to="/">Items</Linked>
+                    <Linked to="/">Our Story</Linked>
                     <Linked to="/">Guide</Linked>
                 </List>
-                <Cart>Cart</Cart>
+                <Cart to="/cart" >Cart</Cart>
             </Content>
         </Wrapper>
     )

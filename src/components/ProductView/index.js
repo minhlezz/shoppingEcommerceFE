@@ -9,36 +9,73 @@ import { FaPlus, FaMinus } from 'react-icons/fa';
 import wrapperImg from '../../assets/images/product_wrapper.png';
 import Grid from '../Grid';
 import ProductCard from '../ProductCard';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../redux/cartSlice';
 
 const ProductView = (props) => {
-    let product = props.product;
-    const relatedProduct = props.relatedProduct;
+    //Redux
+    const dispatch = useDispatch()
 
+    let product = props.product;
+    if (product === undefined) product = {
+        title: "",
+        price: "",
+        image01: null,
+        slug: "",
+        categorySlug: "",
+        size: [],
+        information: {
+            about: "",
+            farm: "",
+            roast: "",
+            tasting: ""
+        },
+        description: "",
+
+    }
+
+    const relatedProduct = props.relatedProduct;
+    //State
     const [size, setSize] = useState(undefined);
     const [quantity, setQuantity] = useState(1);
 
-    //Handling Events
+    //----------Handling Events---------//
+    //UpdateQuantity Event
     const handleQuantityEvents = (type) => {
         type === 'plus' ? setQuantity(quantity + 1) : setQuantity(quantity - 1 < 1 ? 1 : quantity - 1);
     }
 
+    //Check addToCart
     const validator = () => {
         if (size === undefined) {
-            alert('Please select size');
+            alert('Please select da size');
             return false
         }
+        return true
     }
+
+    useEffect(() => {
+        setQuantity(1)
+        setSize(undefined)
+    }, [product])
 
     const addToCard = () => {
         if (validator()) {
-            alert('success')
-        } else {
-            alert('false')
+            let newItem = {
+                slug: product.slug,
+                size: size,
+                price: product.price,
+                quantity: quantity
+            }
+            console.log(newItem)
+            if (dispatch(addItem(newItem))) {
+                alert('Success')
+            } else {
+                alert('Fail')
+            }
         }
     }
-    // useEffect(() => {
 
-    // }, [product])
 
     return (
         <Wrapper>

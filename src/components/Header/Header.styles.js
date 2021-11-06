@@ -78,10 +78,12 @@ export const Linked = styled(Link)`
     }
 `;
 
-export const Cart = styled.div`
+export const Cart = styled(Link)`
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 12px 15px;
+    text-decoration: none;
+    color: #fff;
 `;
 

@@ -148,7 +148,7 @@ export const Icon = styled.div`
     align-items: center;
 
     svg {
-        fill: ${({ disabled }) => disabled ? 'var(--white)' : 'var(--cyan)'}
+        fill: ${({ disabled }) => disabled ? 'var(--grey)' : 'var(--cyan)'}
     }
 
 `
