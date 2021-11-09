@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { Flex } from '../GlobalStyles'
 import ProductView from '../components/ProductView'
@@ -12,10 +12,14 @@ const Product = (props) => {
     const product = productData.getProductBySlug(props.match.params.slug)
     const relatedProduct = productData.getProducts(3)
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <>
             <StyledFlex>
-                <ProductView 
+                <ProductView
                     product={product}
                     relatedProduct={relatedProduct}
                 />

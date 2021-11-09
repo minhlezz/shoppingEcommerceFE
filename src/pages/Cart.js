@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import styled from 'styled-components';
 import productData from '../assets/fake-api/product.data';
-import CartItem from '../components/CartItem';
-import Grid  from '../components/Grid';
+import CartView from '../components/CartView';
 
-const CustomFlex = styled.div`
-    padding-top: 150px;
-`
+
 
 const Cart = () => {
     const cartItems = useSelector((state) => state.cartItems.value);
-    console.log(productData.getCartItemsInfo(cartItems));
 
     const [cartProducts, setCartProducts] = useState(productData.getCartItemsInfo(cartItems))
     const [totalProducts, setTotalProducts] = useState(0)
@@ -24,12 +19,13 @@ const Cart = () => {
     }, [cartItems])
 
     return (
-        <CustomFlex>
-            <Grid col={1} mdCol={1} smCol={1} gap={20}>
-                <CartItem />
-                <CartItem />
-            </Grid>
-        </CustomFlex>
+        <>
+            <CartView
+                cartProducts={cartProducts}
+                totalProducts={totalProducts}
+                totalPrice={totalPrice}
+            />
+        </>
     )
 }
 

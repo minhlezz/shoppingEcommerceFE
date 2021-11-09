@@ -7,7 +7,7 @@ const Header = () => {
         <Wrapper>
             <Content>
                 <List>
-                    <Linked to="/">Coffeelify</Linked>
+                    <Linked to="/">Cafelify</Linked>
                     <Linked to="/catalog">Coffee</Linked>
                     <Linked to="/">Our Story</Linked>
                     <Linked to="/">Guide</Linked>

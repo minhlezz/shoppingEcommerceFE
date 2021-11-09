@@ -2,11 +2,13 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
-    position: absolute;
+    position: sticky;
     width: 100%;
     top: 0;
     z-index: 99;
     user-select: none;
+    background-color: rgba(0,0,0, .1);
+
 `;
 
 export const Content = styled.div`
@@ -18,7 +20,6 @@ export const Content = styled.div`
     align-items: center;
     height: 82px;
     width: 100%;
-    background-color: rgba(0,0,0, .1);
 `;
 
 export const List = styled.div`

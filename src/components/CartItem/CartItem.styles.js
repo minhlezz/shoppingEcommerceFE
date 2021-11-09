@@ -5,7 +5,11 @@ import { Link } from "react-router-dom"
 export const Wrapper = styled.div`
     display: flex;
     background-color: var(--lgrey);
-    width: 60%;
+    width: 100%;
+    border-radius: 8px;
+    :not(:last-child) {
+        margin-bottom: 10px;
+    }
 `
 
 export const Image = styled.div`
@@ -13,7 +17,7 @@ export const Image = styled.div`
     align-items: center;
     flex-shrink: 0;
     img {
-        height: 150px;
+        height: 90px;
     }
 `
 
@@ -21,13 +25,13 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: 0 24px;
+    padding: 0 12px;
 `
 
 export const ContentTop = styled.div`
     display: flex;
     width: 100%;
-    padding-top: 15px;
+    padding-top: 5px;
     align-items: baseline;
 `
 
@@ -37,7 +41,6 @@ export const ContentInfo = styled.div`
         display: block;
         text-transform: uppercase;
         font-weight: 500;
-        margin-bottom: 12px;
         h3 {
             font-size: 1rem;
         }
@@ -61,7 +64,7 @@ export const ContentBottom = styled.div`
     display: flex;
     align-items: center;
     margin-top: auto;
-    padding: 12px 0;
+    padding: 5px 0;
 `
 
 export const ContentEdit = styled.div`
