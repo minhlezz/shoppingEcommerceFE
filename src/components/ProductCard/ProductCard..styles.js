@@ -19,16 +19,13 @@ export const Wrapper = styled.div`
 export const CardLink = styled(Link)`
     text-decoration: none;
     color: var(--white);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 `
 
 export const CardImage = styled.div`
     position: relative;
     padding-top: 100%;
     overflow: hidden;
-    flex-shrink: 0;
+
     img {
         position: absolute;
         height: 100%;

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components';
-import { Button, Flex } from '../GlobalStyles';
+import { Button, Container, Flex } from '../GlobalStyles';
 import InfiniteList from '../components/InfiniteList'
 import CatalogFilter from '../components/CatalogFilter'
 import productData from '../assets/fake-api/product.data';
@@ -81,7 +81,7 @@ const Catalog = () => {
   }, [updateProducts])
 
   return (
-    <>
+    <Container>
       <CustomFlex>
         <Button onClick={handleToggle}>Filters</Button>
         {toggle && (
@@ -93,7 +93,7 @@ const Catalog = () => {
         )}
         <InfiniteList data={products} />
       </CustomFlex>
-    </>
+    </Container>
   )
 }
 

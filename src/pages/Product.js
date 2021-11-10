@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { Flex } from '../GlobalStyles'
+import { Container, Flex } from '../GlobalStyles'
 import ProductView from '../components/ProductView'
 import productData from '../assets/fake-api/product.data'
 
@@ -17,14 +17,14 @@ const Product = (props) => {
     }, [])
 
     return (
-        <>
+        <Container>
             <StyledFlex>
                 <ProductView
                     product={product}
                     relatedProduct={relatedProduct}
                 />
             </StyledFlex>
-        </>
+        </Container>
     )
 }
 

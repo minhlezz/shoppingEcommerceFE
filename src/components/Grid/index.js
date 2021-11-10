@@ -25,7 +25,10 @@ const Wrapper = styled.div`
     }
 
     @media only screen and (max-width: 960px) {
-        grid-template-columns: ${({ smCol }) => `repeat(${smCol}, 1fr)`};
+        /* grid-template-columns: ${({ smCol }) => `repeat(${smCol}, 1fr)`}; */
+        /* grid-template-columns: ${({ smCol }) => smCol > 1 ? `` : `repeat(auto-fit,minmax(auto, 350px))`}; */
+        grid-template-columns:  repeat(auto-fit,minmax(auto, 300px));
+        justify-content: center;
     }
 
 `

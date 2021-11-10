@@ -10,13 +10,11 @@ function App() {
     <Router>
       <GlobalStyles />
       <Header />
-      <Container>
-        <Switch>
-          <Route exact path="/catalog" component={Catalog} />
-          <Route exact path="/catalog/:slug" component={Product} />
-          <Route exact path="/cart" component={Cart} />
-        </Switch>
-      </Container>
+      <Switch>
+        <Route exact path="/catalog" component={Catalog} />
+        <Route exact path="/catalog/:slug" component={Product} />
+        <Route exact path="/cart" component={Cart} />
+      </Switch>
     </Router>
   );
 }

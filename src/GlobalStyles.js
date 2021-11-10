@@ -30,6 +30,7 @@ export const Container = styled.div`
     max-width: var(--max-width);
     padding: 0 40px;
     margin: 0 auto;
+    width: 100%;
 `
 
 export const Flex = styled.div`

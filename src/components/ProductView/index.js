@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {
     Wrapper, Content, Image, ProductInfo,
     Price, Roast, RoastLevel, Taste, BagSize,
-    Size, Quantity, QuantityNumber, Icon,
+    Size, Quantity, QuantityNumber, Icon, ProductOverview,
     CartButton, Label, ProductDetail, InforContent, RelatedProduct
 } from './ProductView.styles';
 import { FaPlus, FaMinus } from 'react-icons/fa';
@@ -80,10 +80,31 @@ const ProductView = (props) => {
     return (
         <Wrapper>
             <Content>
-                <Image>
-                    <img src={wrapperImg} alt="wrapper" className="img_wrapper" />
-                    <img src={product.image01} alt="" className="img_product" />
-                </Image>
+                <ProductOverview>
+                    <Image>
+                        <img src={wrapperImg} alt="wrapper" className="img_wrapper" />
+                        <img src={product.image01} alt="" className="img_product" />
+                    </Image>
+                    <ProductDetail>
+                        <h2>About This</h2>
+                        <p>{product.information.about}</p>
+                        <h2>Information</h2>
+                        <Grid col={2} mdCol={2} smCol={2}>
+                            <InforContent>
+                                <h3>Farm</h3>
+                                <p>{product.information.farm}</p>
+                            </InforContent>
+                            <InforContent>
+                                <h3>Roast</h3>
+                                <p>{product.information.roast}</p>
+                            </InforContent>
+                            <InforContent>
+                                <h3>Tasting</h3>
+                                <p>{product.information.tasting}</p>
+                            </InforContent>
+                        </Grid>
+                    </ProductDetail>
+                </ProductOverview>
                 <ProductInfo>
                     <h1>{product.title}</h1>
                     <Price>
@@ -132,25 +153,6 @@ const ProductView = (props) => {
                         <span>Add to Cart</span>
                     </CartButton>
                 </ProductInfo>
-                <ProductDetail>
-                    <h2>About This</h2>
-                    <p>{product.information.about}</p>
-                    <h2>Information</h2>
-                    <Grid col={2} mdCol={2} smCol={2}>
-                        <InforContent>
-                            <h3>Farm</h3>
-                            <p>{product.information.farm}</p>
-                        </InforContent>
-                        <InforContent>
-                            <h3>Roast</h3>
-                            <p>{product.information.roast}</p>
-                        </InforContent>
-                        <InforContent>
-                            <h3>Tasting</h3>
-                            <p>{product.information.tasting}</p>
-                        </InforContent>
-                    </Grid>
-                </ProductDetail>
             </Content>
             <RelatedProduct>
                 <h1>Related Product</h1>

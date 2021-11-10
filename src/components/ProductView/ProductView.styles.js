@@ -9,38 +9,60 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
     position: relative;
+    display: flex;
+    margin-left: -12px;
+`
+
+export const ProductOverview = styled.div`
+    width: 60%;
+    padding-left: 12px;
+    padding-right: 12px;
+    flex-grow: 1;
 `
 
 export const Image = styled.div`
     position: relative;
-    float: left;
-    width: 60%;
-    padding-top: 50%;
+    padding-top: 60%;
+    
+    &:hover {
+        transform: scale(1.2);
+    }
     .img_product {
         position: absolute;
         height: 100%;
         z-index: 3;
-        top:0;
+        top: 0;
+        right: 0;
+        transform: translateX(-40%);
     }
 
     .img_wrapper {
         position: absolute;
-        top: 0;
-        left: 0;
         height: 100%;
+        top: 0;
+        right: 0;
+        transform: translateX(-40%);
         z-index: 1;
     }
 
  
 `
 
+
+
 export const ProductInfo = styled.div`
-    float: right;
+    padding-left: 12px;
+    padding-right: 12px;
     width: 40%;
     background-color: var(--lgrey);
     box-shadow: 0 5px 10px 0 rgb(0 0 0 / 12%);
     border-radius: 8px;
-    padding: 64px;
+    padding: 32px;
+    flex-grow: 0;
+    max-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     & > h1 {
         font-weight: bold;
@@ -48,12 +70,10 @@ export const ProductInfo = styled.div`
         font-size: 3rem;
         letter-spacing: .0625rem;
         line-height: 1;
-        margin-bottom: 32px;
     }
 `
 
 export const Price = styled.div`
-    margin: 16px 0;
     text-transform: uppercase;
     font-weight: 700;
 
@@ -70,7 +90,6 @@ export const Roast = styled.div`
     text-transform: uppercase;
     font-weight: 700;
     display: flex;
-    margin: 16px 0;
 `
 
 export const RoastLevel = styled.div`
@@ -78,7 +97,6 @@ export const RoastLevel = styled.div`
 `
 
 export const Taste = styled.div`
-    margin: 16px 0;
     display: flex;
     label {
         text-transform: uppercase;
@@ -128,7 +146,6 @@ export const Quantity = styled.div`
     height: 54px;
     border: 1px solid #bcbcbc;
     border-radius: 30px;
-    margin-top: 32px;
 `
 
 export const QuantityNumber = styled.div`
@@ -155,7 +172,6 @@ export const Icon = styled.div`
 
 
 export const CartButton = styled(Button)`
-    margin-top: 32px;
     width: 100%;
     height: 50px;
     cursor: pointer;
@@ -168,9 +184,8 @@ export const CartButton = styled(Button)`
 `
 
 export const ProductDetail = styled.div`
-    width: 60%;
-    padding-bottom: 100px;
-    padding-right: 40px;
+    width: 100%;
+    padding-bottom: 50px;
     h2 {
         text-transform: uppercase;
         font-size: 1.5rem;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import productData from '../assets/fake-api/product.data';
 import CartView from '../components/CartView';
+import { Container } from '../GlobalStyles';
 
 
 
@@ -19,13 +20,13 @@ const Cart = () => {
     }, [cartItems])
 
     return (
-        <>
+        <Container>
             <CartView
                 cartProducts={cartProducts}
                 totalProducts={totalProducts}
                 totalPrice={totalPrice}
             />
-        </>
+        </Container>
     )
 }
 
