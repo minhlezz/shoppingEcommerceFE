@@ -1,11 +1,15 @@
 import React from 'react'
 import { Container } from '../GlobalStyles'
+import Helmet from '../components/Helmet'
+
 
 const Home = () => {
     return (
-        <Container>
+        <Helmet title="Home">
+            <Container>
 
-        </Container>
+            </Container>
+        </Helmet>
     )
 }
 

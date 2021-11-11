@@ -8,6 +8,7 @@ import productData from '../assets/fake-api/product.data';
 const CustomFlex = styled(Flex)`
   flex-direction: column;
   padding-top: 150px;
+  user-select: none;
 `
 
 const Catalog = () => {

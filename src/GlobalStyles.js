@@ -51,6 +51,14 @@ export const Button = styled.button`
     text-transform: uppercase;
 `
 
+/**Breakpoint  */
+export const device = {
+    mobile: '(max-width: 960px)',
+    laptop: '(max-width: 1200px)',
+    desktop: '(min-width: 961px )',
+}
+
+
 export default GlobalStyles;
 
 
