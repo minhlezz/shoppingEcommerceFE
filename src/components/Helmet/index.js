@@ -9,9 +9,9 @@ const Helmet = (props) => {
     }, [])
 
     return (
-        <div>
+        <>
             {props.children}
-        </div>
+        </>
     )
 }
 

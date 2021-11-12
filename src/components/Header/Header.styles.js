@@ -62,7 +62,7 @@ export const Menu = styled.div`
     @media ${device.mobile} {
         position: fixed;
         top: 0;
-        left: -100%;
+        left: ${props => props.toggle ? '0': '-100%'};
         bottom: 0;
         z-index: 98;
         width: 50%;
@@ -72,7 +72,7 @@ export const Menu = styled.div`
         background-color: var(--lgrey);
         overflow-x: hidden;
         overflow-y: auto;
-
+        transition: .3s cubic-bezier(.25,.46,.45,.94);
     }
     
     @media (max-width: 600px) {
@@ -257,5 +257,9 @@ export const CartQuantity = styled.span`
 `
 
 
-
+export const IconLink = styled(Link)`
+    text-decoration: none;
+    display: block;
+    color: #fff;
+`
 

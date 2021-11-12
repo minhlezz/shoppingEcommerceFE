@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Wrapper, Content, List, Linked, User, UserLink, HeaderInner,
-    Logo, LogoLink, Menu, Icon, MobileIcon, CartQuantity
+    Logo, LogoLink, Menu, Icon, MobileIcon, CartQuantity, IconLink
 } from './Header.styles';
 import { FaOpencart, FaUser, FaTimes, FaBars } from 'react-icons/fa'
+import Overlay from './Overlay';
 
 
 const Header = () => {
+
+    const [toggle, setToggle] = useState(false)
+
+    const handleToggle = () => {
+        setToggle(!toggle)
+    }
+
     return (
         <Wrapper>
             <Content>
@@ -14,8 +22,8 @@ const Header = () => {
                     <Logo>
                         <LogoLink to="/">Cafelify</LogoLink>
                     </Logo>
-                    <Menu>
-                        <Icon>
+                    <Menu toggle={toggle} onClick={() => handleToggle()}>
+                        <Icon onClick={() => handleToggle()}>
                             <FaTimes />
                         </Icon>
                         <List>
@@ -36,13 +44,16 @@ const Header = () => {
                     </Menu>
                     <MobileIcon>
                         <Icon>
-                            <FaOpencart />
-                            <CartQuantity>2</CartQuantity>
+                            <IconLink to="/cart">
+                                <FaOpencart />
+                                <CartQuantity>2</CartQuantity>
+                            </IconLink>
                         </Icon>
-                        <Icon>
+                        <Icon onClick={() => handleToggle()}>
                             <FaBars />
                         </Icon>
                     </MobileIcon>
+                    <Overlay toggle={toggle} onClick={() => handleToggle()} />
                 </HeaderInner>
             </Content>
         </Wrapper>
