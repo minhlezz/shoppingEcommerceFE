@@ -6,6 +6,7 @@ import productData from '../assets/fake-api/product.data'
 
 const StyledFlex = styled(Flex)`
     padding-top: 150px;
+    user-select: none;
 `
 
 const Product = (props) => {

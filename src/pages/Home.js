@@ -1,20 +1,17 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Container } from '../GlobalStyles'
 import Helmet from '../components/Helmet'
-// import Banner from '../components/Banner'
+import Banner from '../components/Banner'
+import ProductSlider from '../components/ProductSlider'
+import Section, { SectionBody, SectionTitle } from '../components/Section/index'
+import { Container } from '../GlobalStyles'
 
-const CustomContainer = styled(Container)`
-    padding-top: 82px;
-`
+
 
 const Home = () => {
     return (
         <Helmet title="Home">
-            <CustomContainer>
-                {/* <Banner /> */}
-                abc
-            </CustomContainer>
+            <Banner />
+            {/* <ProductSlider /> */}
         </Helmet>
     )
 }
