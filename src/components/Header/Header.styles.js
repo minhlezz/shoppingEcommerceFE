@@ -20,6 +20,10 @@ export const Content = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
+
+    @media ${device.mobile} {
+        padding: 0 20px;
+    }
 `;
 export const HeaderInner = styled.div`
     display: flex;
@@ -62,7 +66,7 @@ export const Menu = styled.div`
     @media ${device.mobile} {
         position: fixed;
         top: 0;
-        left: ${props => props.toggle ? '0': '-100%'};
+        left: ${props => props.toggle ? '0' : '-100%'};
         bottom: 0;
         z-index: 98;
         width: 50%;
@@ -95,7 +99,7 @@ export const Icon = styled.div`
     @media ${device.mobile} {
         display: block;
         width: 100%;
-        padding: 12px 15px;
+        padding: 4px 9px;
         position: relative;
 
         svg {

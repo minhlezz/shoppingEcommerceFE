@@ -1,32 +1,47 @@
 import React from 'react'
 import {
     Wrapper, Card, CardImage, CardContent, Title,
-    Price, Info
+    Price, Info, SubBackground
 } from './ProductSlider.styles'
-
+import SliderData from '../../assets/fake-api/slider.data';
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper'
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
 
 const ProductSlider = () => {
+
+    SwiperCore.use([Navigation, Pagination, Scrollbar])
+
     return (
         <Wrapper>
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
+            <Swiper
+                slidesPerView={4}
+                spaceBetween={50}
+                navigation={true}
+            >
+                {SliderData.length > 0 && SliderData.map((item, index) => (
+                    <SwiperSlide key={index}>
+                        <ProductItem item={item} />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </Wrapper>
     )
 }
 
-const ProductItem = () => {
+const ProductItem = (props) => {
 
     return (
-        <Card>
+        <Card to={props.item.slug}>
             <CardImage>
-                <img src={"https://camposcoffee.com/wp-content/uploads/2016/09/500G_Front_ORGANIC-300x300.png"}
-                    alt="" />
+                <SubBackground />
+                <img src={props.item.image01} alt="" />
             </CardImage>
             <CardContent>
-                <Title>Comlumbia Blend</Title>
-                <Price>$50.00</Price>
-                <Info>Teast like shiht ah</Info>
+                <Price>${props.item.price}</Price>
+                <Title>{props.item.title}</Title>
+                <Info>{props.item.description}</Info>
             </CardContent>
         </Card>
     )

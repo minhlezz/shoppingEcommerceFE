@@ -20,7 +20,8 @@ const ProductCard = ({ image, price, title, description, slug }) => {
                         <span>${price}</span>
                     </CardTop>
                     <CardBottom>
-                        <CardTitle>{title}</CardTitle>
+                        <CardTitle>
+                            <h3>{title}</h3></CardTitle>
                         <CardDescription>{description}</CardDescription>
                     </CardBottom>
                 </CardContent>

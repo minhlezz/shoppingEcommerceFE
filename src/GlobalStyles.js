@@ -22,7 +22,9 @@ const GlobalStyles = createGlobalStyle`
     body {
         color: var(--white);
         background-color: #2a2935;
+        overflow-x: hidden;
     }
+
 
 `
 

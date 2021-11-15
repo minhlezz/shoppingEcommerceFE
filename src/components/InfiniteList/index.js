@@ -53,7 +53,7 @@ const InfiniteList = (props) => {
 
     return (
         <Wrapper ref={listRef}>
-            <Grid col={3} mdCol={2} smCol={1} gap={20}>
+            <Grid col={4} mdCol={3} smCol={1} gap={20}>
                 {
                     data && data.map((item, index) => (
                         <ProductCard

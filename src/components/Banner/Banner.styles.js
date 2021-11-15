@@ -3,15 +3,25 @@ import { Link } from "react-router-dom";
 import { Button, device } from '../../GlobalStyles';
 
 export const Wrapper = styled.div`
-    background-image: url("https://camposcoffee.com/wp-content/uploads/2021/11/TRAIL2-1536x1152.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 600px;
     width: 100%;
-    filter: brightness(80%);
     position: relative;
     user-select: none;
+    padding-top: 82px;
 `
+
+export const Background = styled.div`
+    height: 650px;
+    width: 100%;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(80%);
+
+    }
+
+`
+
 export const Content = styled.div`
     position: absolute;
     top: 50%;
@@ -42,6 +52,7 @@ export const CustomButton = styled(Button)`
     color: #fff;
     background-color: var(--cyan);
     font-weight: 700;
+    z-index: 3;
     &:hover {
         color: var(--yellow);
     }
@@ -59,7 +70,7 @@ export const Image = styled.div`
     transform: translateY(50%);
     overflow: hidden;
     img {
-        height: 150px;
-        width: 150px;   
+        height: 100px;
+        width: 100px;   
     }
 `

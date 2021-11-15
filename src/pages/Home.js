@@ -11,7 +11,12 @@ const Home = () => {
     return (
         <Helmet title="Home">
             <Banner />
-            {/* <ProductSlider /> */}
+            <Section>
+                <SectionTitle>Explore the range</SectionTitle>
+                <SectionBody>
+                    <ProductSlider />
+                </SectionBody>
+            </Section>
         </Helmet>
     )
 }

@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     position: relative;
     overflow: hidden;
     border-radius: 15px;
+    height: 100%;
     :hover {
         background-color: var(--lgrey);
         transform: translateY(-5px);
@@ -19,16 +20,20 @@ export const Wrapper = styled.div`
 export const CardLink = styled(Link)`
     text-decoration: none;
     color: var(--white);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 `
 
 export const CardImage = styled.div`
     position: relative;
-    padding-top: 100%;
+    padding-top: 80%;
     overflow: hidden;
 
     img {
         position: absolute;
         height: 100%;
+        width: auto;
         z-index: 3;
         top: 0;
         left: 50%;
@@ -41,6 +46,7 @@ export const CardContent = styled.div`
     display: flex;
     flex-direction: column;
     padding: 0 15px 15px;
+    margin-top: auto;
 `
 
 export const CardTop = styled.div`
@@ -59,13 +65,19 @@ export const CardBottom = styled.div`
 
 export const CardTitle = styled.div`
     margin-top: 8px;
-    font-size: 1.5rem;
-    font-weight: 700;
     flex-shrink: 0;
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    @media (max-width: 500px) {
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
 `
 
 export const CardDescription = styled.div`
-    font-size: 1rem;
-    font-weight: 400;
-    margin-top: auto;
+    font-size: 14px;
+    font-weight: 300;
 `

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 
 export const Wrapper = styled.div`
+    padding-top: 50px;
     margin-bottom: 80px;
-    background-color: rgba(0,0,0, .5);
     & > * ~ * {
         margin-top: 70px;
     }
@@ -11,9 +11,11 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
     font-size: 2rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
 `
 
 export const Body = styled.div`
-
+    position: relative;
 `
