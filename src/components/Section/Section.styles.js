@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
     & > * ~ * {
         margin-top: 70px;
     }
+
+   
 `
 
 export const Title = styled.div`
@@ -14,6 +16,11 @@ export const Title = styled.div`
     text-transform: uppercase;
     text-align: center;
     font-weight: 500;
+
+    @media (max-width: 500px) {
+        font-size: 1.5rem;
+    }
+
 `
 
 export const Body = styled.div`

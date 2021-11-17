@@ -29,9 +29,13 @@ export const Content = styled.div`
     transform: translateY(-50%);
     width: 100%;
     overflow: hidden;
+    
 `
 export const Title = styled.div`
-    width: 70%;
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 40px;
+
     h1 {
         font-size: 3rem;
         text-shadow: 2px 2px 20px rgb(0 0 0 / 20%);
@@ -61,6 +65,10 @@ export const CustomButton = styled(Button)`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin-left: 40px;
 `
 
 export const Image = styled.div`

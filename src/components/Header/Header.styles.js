@@ -265,5 +265,9 @@ export const IconLink = styled(Link)`
     text-decoration: none;
     display: block;
     color: #fff;
+
+    .mobile {
+        transform: unset;
+    }
 `
 

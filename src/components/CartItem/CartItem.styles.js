@@ -19,6 +19,12 @@ export const Image = styled.div`
     img {
         height: 90px;
     }
+    @media (max-width: 350px) {
+        img {
+            width: 60px;
+            height: auto;
+        }
+    }
 `
 
 export const Content = styled.div`
@@ -32,7 +38,10 @@ export const ContentTop = styled.div`
     display: flex;
     width: 100%;
     padding-top: 5px;
-    align-items: baseline;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
 `
 
 export const ContentInfo = styled.div`
@@ -58,6 +67,9 @@ export const ContentPrice = styled.div`
     margin-left: auto;
     font-size: 1rem;
     font-weight: 500;
+    @media (max-width: 500px) {
+        margin-left:0;
+    }
 `
 
 export const ContentBottom = styled.div`
@@ -65,6 +77,9 @@ export const ContentBottom = styled.div`
     align-items: center;
     margin-top: auto;
     padding: 5px 0;
+    justify-content: space-between;
+    width: 100%;
+
 `
 
 export const ContentEdit = styled.div`
@@ -74,11 +89,12 @@ export const ContentEdit = styled.div`
     height: 40px;
     border: 1px solid #bcbcbc;
     border-radius: 30px;
-    width: 250px;
+    max-width: 250px;
+    width: 100%;
+    margin-right: 12px;
 `
 
 export const ContentDelete = styled.div`
-    margin-left: auto;
     cursor: pointer;
     svg {
         fill: var(--cyan);

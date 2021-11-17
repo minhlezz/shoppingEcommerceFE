@@ -5,15 +5,21 @@ import {
 } from './Header.styles';
 import { FaOpencart, FaUser, FaTimes, FaBars } from 'react-icons/fa'
 import Overlay from './Overlay';
+import { useSelector } from 'react-redux';
 
 
 const Header = () => {
-
+    const cartItems = useSelector((state) => state.cartItems.value);
     const [toggle, setToggle] = useState(false)
 
     const handleToggle = () => {
         setToggle(!toggle)
     }
+
+    const quantity = cartItems.map((item, index) => {
+        return item.quantity
+    })
+    const total = quantity.reduce((acc, curr) => acc + curr, 0)
 
     return (
         <Wrapper>
@@ -34,7 +40,9 @@ const Header = () => {
                         <User>
                             <UserLink to="/cart" className="cart">
                                 <FaOpencart />
-                                <CartQuantity>2</CartQuantity>
+                                {total > 0 && (
+                                    <CartQuantity>{total}</CartQuantity>
+                                )}
                             </UserLink>
                             <UserLink to="/login" disabled >
                                 <FaUser />
@@ -46,7 +54,9 @@ const Header = () => {
                         <Icon>
                             <IconLink to="/cart">
                                 <FaOpencart />
-                                <CartQuantity>2</CartQuantity>
+                                {total > 0 && (
+                                    <CartQuantity className="mobile">{total}</CartQuantity>
+                                )}
                             </IconLink>
                         </Icon>
                         <Icon onClick={() => handleToggle()}>

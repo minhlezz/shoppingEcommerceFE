@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 `
 
 Grid.propTypes = {
-    col: PropTypes.number.isRequired,
+    col: PropTypes.number,
     smCol: PropTypes.number,
     mdCol: PropTypes.number,
     gap: PropTypes.number,

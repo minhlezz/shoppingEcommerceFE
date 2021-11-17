@@ -12,6 +12,10 @@ export const Content = styled.div`
     position: relative;
     margin-left: -12px;
     display: flex;
+
+    @media (max-width: 960px) {
+        flex-direction: column;
+    }
 `
 
 export const Order = styled.div`
@@ -19,6 +23,10 @@ export const Order = styled.div`
     padding: 0 12px;
     h1 {
         margin-bottom: 24px;
+    }
+    @media (max-width: 960px) {
+      width: 100%;
+      padding: 0;
     }
 `
 
@@ -35,11 +43,18 @@ export const Checkout = styled.div`
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%), 0 1px 2px 0 rgb(0 0 0 / 10%);
     padding: 0 12px;
 
+    @media (max-width: 960px) {
+        width: 100%;
+        margin-top: 20px;
+    }
 `
 
 export const CheckoutItem = styled.div`
     display: flex;
     flex-direction: column;
+    @media (max-width: 960px) {
+        display: none;
+    }
 `
 
 export const Item = styled.div`
@@ -54,9 +69,11 @@ export const Item = styled.div`
 
 export const ItemInfo = styled.div`
     display: flex;
+    
     img {
         height: 90px;
     }
+    
 `
 
 export const Info = styled.div`
@@ -100,6 +117,8 @@ export const CheckoutTotal = styled.div`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     display: block;
+
+   
  
 `
 
@@ -107,8 +126,6 @@ export const StyledButton = styled(Button)`
     margin-bottom: 12px;
     width: 100%;
     max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -116,5 +133,9 @@ export const StyledButton = styled(Button)`
         opacity: .9;
         background-color: var(--cyan);
         color: #fff;
+    }
+
+    @media (max-width: 500px) {
+       padding: 12px;
     }
 `

@@ -6,15 +6,24 @@ export const Wrapper = styled.div`
    margin-right: auto;
    margin-left: auto;
    height: 100%;
-
-   .swiper-wrapper{
-     
-    }
-    .swiper-slide {
-        flex-basis: 1;
+ 
+   @media (max-width: 1240px) {
+        padding: 0 20px;
     }
 `
 
+export const Content = styled.div`
+    display: none;
+    @media (max-width: 500px) {
+        display: block;
+    }
+`
+
+export const ContentDesktop = styled.div`
+    @media (max-width: 500px) {
+        display: none;
+    }
+`
 
 
 export const SubBackground = styled.div`
@@ -48,13 +57,16 @@ export const Card = styled(Link)`
     overflow: hidden;
     transition: .3s cubic-bezier(.55,.085,.68,.53);
     
-    &:hover {
+    @media (min-width: 500px) {
+        &:hover {
         transform: translateY(-10px);
     }
 
-    &:hover ${SubBackground} {
-        opacity: 1;
+        &:hover ${SubBackground} {
+            opacity: 1;
+        }
     }
+  
 
 `
 
@@ -79,13 +91,22 @@ export const CardContent = styled.div`
    display: flex;
    flex-direction: column;
    padding: 0 16px 16px;
-
+   
+   @media (max-width: 900px) {
+        padding: 0 10px;
+    }
 `
 
 export const Price = styled.div`
     text-transform: uppercase;
     width: 100%;
     font-weight: 300;
+    @media (max-width: 900px) {
+        font-size: 12px;
+        text-align: center;
+
+    }
+   
 `
 
 export const Title = styled.div`
@@ -101,6 +122,14 @@ export const Title = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-word;
+
+    @media (max-width: 900px) {
+        font-size: 12px;
+        text-align: center;
+
+    }
+
+   
 `
 
 
@@ -109,6 +138,10 @@ export const Info = styled.div`
     margin: 8px 0;
     font-size: 14px;
     font-weight: 300;
+
+    @media (max-width: 900px) {
+        display: none;
+    }
 `
 
 

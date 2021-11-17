@@ -11,6 +11,10 @@ export const Content = styled.div`
     position: relative;
     display: flex;
     margin-left: -12px;
+
+    @media (max-width: 960px) {
+        flex-direction: column;
+    }
 `
 
 export const ProductOverview = styled.div`
@@ -18,6 +22,9 @@ export const ProductOverview = styled.div`
     padding-left: 12px;
     padding-right: 12px;
     flex-grow: 1;
+    @media (max-width: 960px) {
+        width: 100%;
+    }
 `
 
 export const Image = styled.div`
@@ -45,32 +52,70 @@ export const Image = styled.div`
         z-index: 1;
     }
 
- 
+    @media (max-width: 500px) {
+        padding-top: 100%;
+        .img_product {
+            left: 0;
+            transform: unset;
+        }
+
+        .img_wrapper {
+            transform: unset;
+        }
+    }
 `
 
 
 
 export const ProductInfo = styled.div`
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 40%;
-    background-color: var(--lgrey);
-    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 12%);
-    border-radius: 8px;
-    padding: 32px;
-    flex-grow: 0;
-    max-height: 650px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 12%);
+    background-color: var(--lgrey);
+    border-radius: 8px;
 
-    & > h1 {
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 3rem;
-        letter-spacing: .0625rem;
-        line-height: 1;
+    & > div {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
+
+    @media (min-width: 961px) {
+        padding-left: 12px;
+        padding-right: 12px;
+        width: 40%;
+        padding: 32px;
+        flex-grow: 0;
+        max-height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & > h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 3rem;
+            letter-spacing: .0625rem;
+            line-height: 1;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 350px) {
+        padding: 12px;
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+
 `
 
 export const Price = styled.div`
@@ -124,6 +169,8 @@ export const Size = styled.div`
     margin-top: 16px;
     display: flex;
     height: 50px;
+    width: 100%;
+    justify-content: center;
 `
 export const Label = styled.label`
     background-color: ${props => props.isSize ? 'var(--cyan)' : 'var(--grey)'};
@@ -133,7 +180,7 @@ export const Label = styled.label`
     flex-basis: 33.333%;
     flex-shrink: 1;
     text-align: center;
-    margin-left: 5px;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,8 +191,13 @@ export const Quantity = styled.div`
     justify-content: space-around;
     align-items: center;
     height: 54px;
+    width: 100%;
     border: 1px solid #bcbcbc;
     border-radius: 30px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+
 `
 
 export const QuantityNumber = styled.div`
@@ -176,6 +228,10 @@ export const CartButton = styled(Button)`
     height: 50px;
     cursor: pointer;
     user-select: none;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+
     &:hover {
         background-color: var(--cyan);
         opacity: .9;
@@ -216,5 +272,9 @@ export const RelatedProduct = styled.div`
         font-weight: 500;
         margin-bottom: 24px;
         color: var(--cyan);
+    }
+
+    @media (max-width: 960px) {
+        margin-top: 50px;
     }
 `
