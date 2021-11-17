@@ -1,22 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Wrapper, Title, Content } from './Widget.styles'
+import { Wrapper, Title, Content } from './Widget.styles';
 
-const Widget = ({ children }) => {
+const Widget = (props) => {
     return (
         <Wrapper>
-            <Title>
-                <span>Races</span>
-            </Title>
+            <Title><span>{props.title}</span></Title>
             <Content>
-                {children}
+                {props.children}
             </Content>
         </Wrapper>
     )
-}
-
-Widget.propTypes = {
-
 }
 
 export default Widget

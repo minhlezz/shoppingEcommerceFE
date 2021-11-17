@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
         --yellow: #ffc904;
         --black: #000;
         --lgrey: #353444;
+        --grey: #ababab;
     }
     
     * {
@@ -21,7 +22,9 @@ const GlobalStyles = createGlobalStyle`
     body {
         color: var(--white);
         background-color: #2a2935;
+        overflow-x: hidden;
     }
+
 
 `
 
@@ -29,6 +32,36 @@ export const Container = styled.div`
     max-width: var(--max-width);
     padding: 0 40px;
     margin: 0 auto;
+    width: 100%;
 `
 
+export const Flex = styled.div`
+    display: flex;
+    align-items: flex-start;
+`
+
+
+export const Button = styled.button`
+    display: block;
+    cursor: pointer;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #7fffd4;
+    padding: 10px 50px;
+    background-color: transparent;
+    color: #7fffd4;
+    text-transform: uppercase;
+`
+
+/**Breakpoint  */
+export const device = {
+    mobile: '(max-width: 960px)',
+    laptop: '(max-width: 1200px)',
+    desktop: '(min-width: 961px )',
+}
+
+
 export default GlobalStyles;
+
+
+

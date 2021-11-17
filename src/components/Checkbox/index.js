@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useRef } from 'react'
 import {
     Wrapper,
     HiddenCheckbox,
@@ -7,22 +6,31 @@ import {
     Icon
 } from './Checkbox.styles'
 
-const Checkbox = ({ checked, label, ...props }) => (
-    <>
-        <Wrapper>
-            <HiddenCheckbox
-                checked={checked}
-                {...props}
-            />
-            <StyledCheckbox checked={checked}>
-                <Icon viewBox="0 0 24 24" >
-                    <polyline points="20 6 9 17 4 12" />
-                </Icon>
-            </StyledCheckbox>
-            <span>{label}</span>
-        </Wrapper>
-    </>
-)
+const Checkbox = (props) => {
+    const inputRef = useRef(null);
+    const onChange = () => {
+        if (props.onChange) {
+            props.onChange(inputRef.current)
+        }
+    }
+    return (
+        <>
+            <Wrapper>
+                <HiddenCheckbox
+                    checked={props.checked}
+                    onChange={onChange}
+                    ref={inputRef}
+                />
+                <StyledCheckbox checked={props.checked}>
+                    <Icon viewBox="0 0 24 24" >
+                        <polyline points="20 6 9 17 4 12" />
+                    </Icon>
+                </StyledCheckbox>
+                <span>{props.label}</span>
+            </Wrapper>
+        </>
+    )
+}
 
 
 Checkbox.propTypes = {

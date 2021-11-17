@@ -3,20 +3,29 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     position: static;
     width: 100%;
-    margin-right: 20px;
+    margin-top: 20px;
 `
 
 export const Content = styled.div`
-    /* width: 360px; */
     background-color: var(--lgrey);
     border-radius: 8px;
-    padding: 10px;
+    padding: 20px 0;
 `
 
-export const ContentTitle = styled.div`
+export const ContentTop = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 40px;
+    text-transform: uppercase;
 `
 
+export const ContentBody = styled.div`
+    display: block;
+    padding: 0 40px;
 
+`
+
+export const ContentItem= styled.div`
+    margin-right: 20px;
+`
