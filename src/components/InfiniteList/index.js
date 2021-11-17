@@ -25,7 +25,7 @@ const InfiniteList = (props) => {
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if (listRef && listRef.current) {
-                if (window.scrollY + window.innerHeight === listRef.current.clientHeight + listRef.current.offsetTop ) {
+                if (window.scrollY + window.innerHeight >= listRef.current.clientHeight + listRef.current.offsetTop + 200 ) {
                     console.log("bottom reach")
                     setLoad(true)
                 }

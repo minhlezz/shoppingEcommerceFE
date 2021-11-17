@@ -5,6 +5,7 @@ import Catalog from './pages/Catalog';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/catalog/:slug" component={Product} />
         <Route exact path="/cart" component={Cart} />
       </Switch>
+      <Footer />
     </Router>
   );
 }
